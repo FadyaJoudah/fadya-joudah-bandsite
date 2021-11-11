@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
+  src: url("../../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
+}
+body {
+  font-family: "Avenir";
+}/*# sourceMappingURL=bio.css.map */
