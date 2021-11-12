@@ -1,0 +1,34 @@
+@use "./variables" as *;
+
+@mixin flex($flex-direction: row) {
+  display: flex;
+  flex-direction: $flex-direction;
+}
+
+@mixin center($align-items: center) {
+  display: flex;
+  justify-content: center;
+  align-items: $align-items;
+}
+
+@mixin text-settings($size, $line, $weight) {
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+}
+
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}

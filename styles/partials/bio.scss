@@ -1,6 +1,92 @@
-@use "typography.scss";
-@use "variables.scss";
+@use "./typography" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 
 body {
+  margin: 0;
   font-family: "Avenir";
+}
+
+* {
+  box-sizing: border-box;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+.header {
+  height: 5.5625rem;
+  @include flex(column);
+  @include center(center);
+  background-color: $band-black;
+  // height: 3.125rem;
+  @include tablet {
+    @include flex(row);
+    // @include center(baseline)
+  }
+  &__logo {
+    padding: 0.625rem 1.25rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: $white;
+    @include text-settings(24px, 2rem, lighter);
+  }
+}
+.nav {
+  width: 100%;
+
+  height: 100%;
+  @include tablet {
+    // width: 100px;
+  }
+
+  &__tabs {
+    height: 100%;
+    @include flex(row);
+    justify-content: space-around;
+    @include tablet {
+      justify-content: start;
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__item {
+    list-style-type: none;
+    flex-grow: 1;
+    text-align: center;
+    @include tablet {
+      flex-grow: 0;
+      margin: 0px 1.25rem;
+      @include center(center);
+    }
+
+    @include text-settings(0.625rem, 1.25rem, 700);
+    &--active {
+      border-bottom: 0.1875rem white solid;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  height: 15.625rem;
+  width: 25rem;
+
+  background-image: url("../../assets/Images/hero-bio.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 21.875rem;
+  width: 100%;
+
+  &__title {
+    color: $white;
+  }
 }
