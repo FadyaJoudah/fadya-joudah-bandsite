@@ -77,16 +77,30 @@ ul {
 
 .hero {
   display: flex;
-  height: 15.625rem;
-  width: 25rem;
-
+  height: 12.5rem;
+  background: red;
+  height: 20rem;
+  @include tablet {
+    height: 31.25rem;
+  }
+  @include desktop {
+    height: 45rem;
+  }
+  align-items: center;
   background-image: url("../../assets/Images/hero-bio.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 21.875rem;
-  width: 100%;
+  // container follow image height -> source https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
+  // padding-top: 66.64%;
 
   &__title {
     color: $white;
+    margin-left: 1.25rem;
+    @include tablet {
+      @include text-settings(3.75rem, 4.25rem, 700);
+    }
+    @include desktop {
+      @include text-settings(3.75rem, 4.25rem, 700);
+    }
   }
 }

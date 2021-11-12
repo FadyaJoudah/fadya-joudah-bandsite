@@ -90,14 +90,39 @@ ul {
 
 .hero {
   display: flex;
-  height: 15.625rem;
-  width: 25rem;
+  height: 12.5rem;
+  background: red;
+  height: 20rem;
+  align-items: center;
   background-image: url("../../assets/Images/hero-bio.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  height: 21.875rem;
-  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .hero {
+    height: 31.25rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .hero {
+    height: 45rem;
+  }
 }
 .hero__title {
   color: #ffffff;
+  margin-left: 1.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .hero__title {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .hero__title {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+  }
 }/*# sourceMappingURL=bio.css.map */
