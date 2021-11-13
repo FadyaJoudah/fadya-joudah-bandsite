@@ -65,6 +65,7 @@
 .hero {
   display: flex;
   height: 20rem;
+  margin-bottom: 2rem;
   align-items: center;
   background-image: url("../../assets/Images/hero-bio.jpg");
   background-size: cover;
@@ -82,6 +83,7 @@
   &__title {
     color: $white;
     margin-left: 1.25rem;
+    margin-top: 3rem;
     @include tablet {
       @include text-settings(3.75rem, 4.25rem, 700);
     }
@@ -92,20 +94,28 @@
 }
 
 .about {
-  padding: 1rem;
+  margin: 0 1rem;
+  @include tablet {
+    margin-left: 4rem;
+    padding: 0; // background-color: red;
+  }
   &__title {
-    // padding-left: 2rem;
-    // padding-top: 2rem;
+    margin-left: 1rem;
+
     @include text-settings(2rem, 2.5rem, 700);
     @include tablet {
-      @include text-settings(2.5rem, 2.5rem, 700);
+      @include text-settings(1.5rem, 2.5rem, 700);
+      margin: 1rem 2rem;
+      // padding-left: 3rem;
+
+      // di
     }
   }
   &__img {
     width: 100%;
     margin: 1rem 0;
     @include tablet {
-      width: 70vw;
+      width: 100%;
       object-position: center;
     }
   }
@@ -114,7 +124,7 @@
     width: 100%;
     // padding-left: 2rem;
     @include tablet {
-      width: 65vw;
+      width: 65%;
     }
   }
 
@@ -123,11 +133,33 @@
   }
 
   &__article {
-    // padding: 2rem;
-    // background-color: red;
-    p {
-      margin: 1rem 0;
-      @include text-settings(1rem, 1.5rem, "");
+    @include tablet {
+      display: flex;
+      @include tablet {
+        margin-left: 3rem;
+      }
     }
+    p {
+      margin: 1rem;
+      @include text-settings(1rem, 24px, "");
+      // padding: 2rem;
+    }
+  }
+  &__heading {
+    margin-left: 1rem;
+    @include tablet {
+      margin-left: 4rem;
+    }
+  }
+}
+
+.wrapper {
+  @include tablet {
+    width: 40.625rem;
+    margin: 0 auto;
+  }
+  @include desktop {
+    width: 72rem;
+    margin: 0 auto;
   }
 }

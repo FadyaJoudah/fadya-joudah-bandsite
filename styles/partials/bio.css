@@ -79,6 +79,7 @@
 .hero {
   display: flex;
   height: 20rem;
+  margin-bottom: 2rem;
   align-items: center;
   background-image: url("../../assets/Images/hero-bio.jpg");
   background-size: cover;
@@ -98,6 +99,7 @@
 .hero__title {
   color: #ffffff;
   margin-left: 1.25rem;
+  margin-top: 3rem;
 }
 @media screen and (min-width: 48rem) {
   .hero__title {
@@ -115,18 +117,26 @@
 }
 
 .about {
-  padding: 1rem;
+  margin: 0 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .about {
+    margin-left: 4rem;
+    padding: 0;
+  }
 }
 .about__title {
+  margin-left: 1rem;
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 700;
 }
 @media screen and (min-width: 48rem) {
   .about__title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: 700;
+    margin: 1rem 2rem;
   }
 }
 .about__img {
@@ -135,7 +145,7 @@
 }
 @media screen and (min-width: 48rem) {
   .about__img {
-    width: 70vw;
+    width: 100%;
     -o-object-position: center;
        object-position: center;
   }
@@ -148,7 +158,7 @@
 }
 @media screen and (min-width: 48rem) {
   .about__quote {
-    width: 65vw;
+    width: 65%;
   }
 }
 .about__author {
@@ -156,9 +166,40 @@
   line-height: 2.5rem;
   font-weight: 700;
 }
+@media screen and (min-width: 48rem) {
+  .about__article {
+    display: flex;
+  }
+}
+@media screen and (min-width: 48rem) and (min-width: 48rem) {
+  .about__article {
+    margin-left: 3rem;
+  }
+}
 .about__article p {
-  margin: 1rem 0;
+  margin: 1rem;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 24px;
   font-weight: "";
+}
+.about__heading {
+  margin-left: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .about__heading {
+    margin-left: 4rem;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .wrapper {
+    width: 40.625rem;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .wrapper {
+    width: 72rem;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=bio.css.map */
