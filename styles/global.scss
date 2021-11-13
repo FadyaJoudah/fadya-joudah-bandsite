@@ -1,0 +1,24 @@
+@use "./partials/typography" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+body {
+  margin: 0;
+  font-family: "Avenir";
+}
+
+* {
+  box-sizing: border-box;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+h1,
+h2,
+h3,
+p {
+  margin: o;
+}
+ul {
+  padding-inline-start: 0;
+}

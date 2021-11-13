@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
+  src: url("../../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
+}
+body {
+  margin: 0;
+  font-family: "Avenir";
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: o;
+}
+
+ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}/*# sourceMappingURL=global.css.map */
