@@ -159,7 +159,43 @@
     margin: 0 auto;
   }
   @include desktop {
-    width: 72rem;
+    width: 80rem;
     margin: 0 auto;
+  }
+}
+
+.gallery {
+  &__wrapper {
+    @include desktop {
+      margin: 0 auto;
+      width: 80rem;
+    }
+  }
+  background-color: $mercury;
+  &__heading {
+    padding-left: 1rem;
+    @include tablet {
+      margin-top: 1.5rem;
+    }
+    @include text-settings(2rem, "", 700);
+  }
+
+  &__img {
+    max-width: 100%;
+    margin: 0.5rem;
+    object-fit: cover;
+    @include tablet {
+      width: 30%;
+    }
+  }
+  &__imgs {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
   }
 }
