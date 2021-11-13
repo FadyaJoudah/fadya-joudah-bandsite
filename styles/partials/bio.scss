@@ -199,3 +199,91 @@
     }
   }
 }
+
+.footer {
+  padding: 1rem;
+  background-color: $band-dark;
+  &__top {
+    // @include tablet {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-between;
+    // }
+
+    &__heading {
+      color: $white;
+    }
+    &__left {
+      // @include tablet {
+      //   // padding-left: 2rem;
+      //   display: flex;
+      //   align-items: center;
+      // }
+    }
+    &__icon {
+      // padding-right: 2rem;
+      // padding-top: 1rem;
+      padding: 1rem 2rem 1rem 0;
+      @include tablet {
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    &__right {
+      display: none;
+      color: white;
+      padding-top: 1rem;
+      @include tablet {
+        padding-top: 0;
+        display: block;
+      }
+    }
+  }
+  address {
+    color: $white;
+    padding-bottom: 1.5rem;
+    @include text-settings(0.8rem, _, _);
+  }
+  &__bold {
+    @include text-settings(0.8rem, _, bold);
+  }
+
+  p {
+    color: $white;
+  }
+
+  &__bottom {
+    // @include tablet {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: space-between;
+    // }
+    &__email {
+      text-decoration: none;
+      color: $white;
+      @include text-settings(0.7rem, _, _);
+    }
+    &__info {
+      margin-bottom: 1rem;
+    }
+  }
+
+  h2 {
+    color: $white;
+    @include text-settings(_, _, 400);
+    // @include tablet {
+    //   display: none;
+    // }
+  }
+}
+
+.band-name {
+  // @include tablet {
+  //   @include text-settings(2rem, "", 200);
+  //   padding-right: 3rem;
+  //   // @include text-settings(2rem, "", "");
+  // }
+}
+.rights {
+  @include text-settings(0.8rem, "", "");
+}

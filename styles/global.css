@@ -4,6 +4,12 @@
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
   src: url("../../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Avenir";
@@ -21,7 +27,7 @@ h1,
 h2,
 h3,
 p {
-  margin: o;
+  margin: 0;
 }
 
 ul {

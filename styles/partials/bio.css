@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #323232;
+  background-color: #000000;
 }
 @media screen and (min-width: 48rem) {
   .header {
@@ -246,4 +246,68 @@
     justify-content: center;
     margin-bottom: 0.5rem;
   }
+}
+
+.footer {
+  padding: 1rem;
+  background-color: #323232;
+}
+.footer__top__heading {
+  color: #ffffff;
+}
+.footer__top__icon {
+  padding: 1rem 2rem 1rem 0;
+}
+@media screen and (min-width: 48rem) {
+  .footer__top__icon {
+    padding: 1rem 1.5rem;
+  }
+}
+.footer__top__right {
+  display: none;
+  color: white;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer__top__right {
+    padding-top: 0;
+    display: block;
+  }
+}
+.footer address {
+  color: #ffffff;
+  padding-bottom: 1.5rem;
+  font-size: 0.8rem;
+  line-height: _;
+  font-weight: _;
+}
+.footer__bold {
+  font-size: 0.8rem;
+  line-height: _;
+  font-weight: bold;
+}
+.footer p {
+  color: #ffffff;
+}
+.footer__bottom__email {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.7rem;
+  line-height: _;
+  font-weight: _;
+}
+.footer__bottom__info {
+  margin-bottom: 1rem;
+}
+.footer h2 {
+  color: #ffffff;
+  font-size: _;
+  line-height: _;
+  font-weight: 400;
+}
+
+.rights {
+  font-size: 0.8rem;
+  line-height: "";
+  font-weight: "";
 }/*# sourceMappingURL=bio.css.map */
