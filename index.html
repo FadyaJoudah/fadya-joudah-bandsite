@@ -16,7 +16,7 @@
       <nav class="nav">
         <ul class="nav__tabs">
           <li class="nav__item nav__item--active">
-            <a href="" class="nav__link nav__link"> Biography</a>
+            <a href="" class="nav__link nav__link--active"> Biography</a>
           </li>
           <li class="nav__item"><a href="" class="nav__link">Shows</a></li>
         </ul>
@@ -62,117 +62,145 @@
         </p>
       </article>
     </section>
-    <!-- 
+
     <section class="gallery">
-      <h1 class="gallery__heading">Photo Gasllery</h1>
-      <img
-        src="./assets/Images/Photo-gallery-1.jpg"
-        alt="crowd under pink lights"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-2.jpg"
-        alt="girl dancing  in green lighting and smoke"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-3.jpg"
-        alt="crowd hands in pink lighting"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-4.jpg"
-        alt="girl in front of stage"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-5.jpg"
-        alt="crowd hands in bright lights"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-6.jpg"
-        alt="the singer on stage"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-7.jpg"
-        alt="stage and crowd"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-8.jpg"
-        alt="dj tools and hand"
-        class="gallery__img"
-      />
-      <img
-        src="./assets/Images/Photo-gallery-9.jpg"
-        alt="confetti spreading on the crowd"
-        class="gallery__img"
-      />
+      <div class="gallery__wrapper">
+        <h1 class="gallery__heading">Photo Gallery</h1>
+        <div class="gallery__imgs">
+          <img
+            src="./assets/Images/Photo-gallery-1.jpg"
+            alt="crowd under pink lights"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-2.jpg"
+            alt="girl dancing  in green lighting and smoke"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-3.jpg"
+            alt="crowd hands in pink lighting"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-4.jpg"
+            alt="girl in front of stage"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-5.jpg"
+            alt="crowd hands in bright lights"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-6.jpg"
+            alt="the singer on stage"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-7.jpg"
+            alt="stage and crowd"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-8.jpg"
+            alt="dj tools and hand"
+            class="gallery__img"
+          />
+          <img
+            src="./assets/Images/Photo-gallery-9.jpg"
+            alt="confetti spreading on the crowd"
+            class="gallery__img"
+          />
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
-      <section class="footer__top">
-        <h1 class="top__heading">Get in Touch</h1>
-        <div class="top__left">
-          <a href="https://www.instagram.com/" class="top__link">
-            <img
-              src="./assets/Icons/SVG/Icon-instagram.svg"
-              alt="instagram"
-              class="top__icon"
-            />
-          </a>
+      <!-- the wrapper div is to keep the child element form expanding when the page is bigger  -->
+      <div class="footer__wrapper">
+        <section class="footer__top">
+          <div class="footer__top__left">
+            <h1 class="footer__top__heading">Get in Touch</h1>
+            <a href="https://www.instagram.com/" class="footer__top__link">
+              <img
+                src="./assets/Icons/SVG/Icon-instagram.svg"
+                alt="instagram"
+                class="footer__top__icon"
+              />
+            </a>
 
-          <a href="https://www.facebook.com/" class="top__link">
-            <img
-              src="./assets/Icons/SVG/Icon-facebook.svg"
-              alt="facebook"
-              class="top__icon"
-            />
-          </a>
+            <a href="https://www.facebook.com/" class="footer__top__link">
+              <img
+                src="./assets/Icons/SVG/Icon-facebook.svg"
+                alt="facebook"
+                class="footer__top__icon"
+              />
+            </a>
 
-          <a href="https://twitter.com/" class="top__link">
-            <img
-              src="./assets/Icons/SVG/Icon-twitter.svg"
-              alt="twitter"
-              class="top__icon"
-            />
-          </a>
-        </div>
-        <p class="top__right">BANDSITE</p>
-      </section>
-      <section class="footer__bottom">
-        <div class="bottom__info">
-          <div>
-            <p>Cam Adams</p>
-            <p>The Bees Knees Management</p>
+            <a href="https://twitter.com/" class="footer__top__link">
+              <img
+                src="./assets/Icons/SVG/Icon-twitter.svg"
+                alt="twitter"
+                class="footer__top__icon"
+              />
+            </a>
           </div>
-          <address>
-            <br />503 Broadway Penthouse, <br />New York, NY 10012, USA
-          </address>
-          <a href="" class="bottom__email">info@thebeesknees.com</a>
-        </div>
-        <div class="bottom__info">
-          <div>
-            <p>Pearl Gregg</p>
-            <p>Limitless Artist Group</p>
+          <div class="footer__top__right">
+            <p class="band-name">BANDSITE</p>
           </div>
-          <address>
-            <br />Booking Agent for <br />US / South America / Japan
-          </address>
-          <a href="" class="bottom__email">pearl.gregg@limitlessag.com</a>
-        </div>
-        <div class="bottom__info">
-          <div>
-            <p>Carson Whyte</p>
-            <p>TARCH Entertainment</p>
+        </section>
+        <section class="footer__bottom">
+          <div class="footer__bottom__info">
+            <div class="footer__bold">
+              <p>Cam Adams</p>
+              <p>The Bees Knees Management</p>
+            </div>
+            <address>
+              <br />503 Broadway Penthouse, <br />New York, NY 10012, USA
+            </address>
+            <a
+              href="mailto:info@thebeesknees.com"
+              target="_blank"
+              class="footer__bottom__email"
+              >info@thebeesknees.com</a
+            >
           </div>
-          <address><br />Booking Agent for<br />UK / EU / AU</address>
-          <a href="" class="bottom__email">cwhyte@archentertainment.com</a>
-        </div>
-      </section>
-      <p>Copyright The Bees Knees © 2021 All Rights Reserved</p>
-    </footer> -->
+          <div class="footer__bottom__info">
+            <div class="footer__bold">
+              <p>Pearl Gregg</p>
+              <p>Limitless Artist Group</p>
+            </div>
+            <address>
+              <br />Booking Agent for <br />US / South America / Japan
+            </address>
+            <a
+              href="mailto:pearl.gregg@limitlessag.com"
+              class="footer__bottom__email"
+              target="_blank"
+              >pearl.gregg@limitlessag.com</a
+            >
+          </div>
+          <div class="footer__bottom__info">
+            <div class="footer__bold">
+              <p>Carson Whyte</p>
+              <p>TARCH Entertainment</p>
+            </div>
+            <address><br />Booking Agent for<br />UK / EU / AU</address>
+            <a
+              href="mailto:cwhyte@archentertainment.com"
+              target="_blank"
+              class="footer__bottom__email"
+              >cwhyte@archentertainment.com</a
+            >
+            <!-- the _blank in target attribute  is to open the email in a new tab -->
+          </div>
+        </section>
+        <h2>BANDSITE</h2>
+        <p class="rights">
+          Copyright The Bees Knees © 2021 All Rights Reserved
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
