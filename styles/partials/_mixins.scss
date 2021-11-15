@@ -1,14 +1,11 @@
 @use "./variables" as *;
 
-@mixin flex($flex-direction: row) {
+//code idea Brent Carey
+@mixin flex($direction: row, $align: flex-start, $justify: flex-start) {
   display: flex;
-  flex-direction: $flex-direction;
-}
-
-@mixin center($align-items: center) {
-  display: flex;
-  justify-content: center;
-  align-items: $align-items;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
 }
 
 @mixin text-settings($size, $line, $weight) {

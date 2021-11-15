@@ -4,11 +4,10 @@
 
 .header {
   height: 5.5625rem;
-  @include flex(column);
-  @include center(center);
   background-color: $band-dark;
+  @include flex(column, center, center);
   @include tablet {
-    @include flex(row);
+    @include flex(row, _, _);
   }
   &__logo {
     padding: 0.625rem 1.25rem;
@@ -22,19 +21,18 @@
     @include text-settings(24px, 2rem, lighter);
   }
 }
+
 .nav {
   width: 100%;
-
   height: 100%;
   @include tablet {
   }
 
   &__tabs {
     height: 100%;
-    @include flex(row);
-    justify-content: space-around;
+    @include flex(row, _, space-around);
     @include tablet {
-      justify-content: start;
+      @include flex(row, _, start);
     }
   }
 
@@ -42,32 +40,34 @@
     color: $white;
     text-decoration: none;
     @include text-settings(1rem, 1rem, 400);
+
     &--active {
       @include text-settings(1rem, 1.25rem, bold);
     }
   }
 
   &__item {
-    list-style-type: none;
     flex-grow: 1;
     text-align: center;
+    list-style-type: none;
+
     &--active {
       border-bottom: 0.1875rem white solid;
     }
+
     @include tablet {
       flex-grow: 0;
       margin: 0px 1.25rem;
-      @include center(center);
+      @include flex(_, center, center);
       @include text-settings(0.625rem, 1.25rem, 700);
     }
   }
 }
 
 .hero {
-  display: flex;
-  height: 15rem;
+  @include flex(_, center, _);
+  height: 20rem;
   margin-bottom: 2rem;
-  align-items: center;
   background-image: url("../../assets/Images/hero-bio.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -81,8 +81,7 @@
 
   &__title {
     color: $white;
-    margin-left: 1.25rem;
-    margin-top: 3rem;
+    margin: 3rem 0 0 1.25rem;
     @include tablet {
       @include text-settings(3.75rem, 4.25rem, 700);
     }
@@ -96,7 +95,6 @@
 .about {
   margin: 0 1rem;
   @include tablet {
-    // margin-left: 3rem;
     padding: 0;
   }
   &__title {
@@ -104,8 +102,11 @@
 
     @include text-settings(2rem, 2.5rem, 700);
     @include tablet {
-      @include text-settings(1.5rem, 2.5rem, 700);
+      @include text-settings(2rem, 2.5rem, 700);
       margin: 1rem 2rem;
+    }
+    @include desktop {
+      @include text-settings(3rem, 2.5rem, 700);
     }
   }
   &__img {
@@ -117,7 +118,7 @@
     }
   }
   &__quote {
-    @include text-settings(1.1rem, 1.7rem, "");
+    @include text-settings(1.1rem, 1.7rem, _);
     width: 100%;
     @include tablet {
       width: 65%;
@@ -128,13 +129,12 @@
     @include text-settings(0.9rem, 2.5rem, 700);
   }
 
-  // &__article {
-  //   // @include tablet {
-  //   //   display: flex;
-  //     // @include tablet {
-  //     //   // margin-left: 3rem;
-  //     // }
-  //   }
+  &__article {
+    @include tablet {
+      display: flex;
+      @include tablet {
+      }
+    }
     p {
       margin: 1rem;
       @include text-settings(1rem, 24px, "");
@@ -143,7 +143,6 @@
   &__heading {
     margin-left: 1rem;
     @include tablet {
-      // margin-left: 4rem;
     }
   }
 }
@@ -168,11 +167,9 @@
     }
   }
   &__heading {
-    // padding-left: 1rem;
     padding: 0.8rem 0 0 1rem;
     @include tablet {
       margin-top: 1.5rem;
-      // @include text-settings();
     }
     @include text-settings(2rem, "", 700);
   }
@@ -185,15 +182,13 @@
       width: 30%;
     }
   }
+
   &__imgs {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, _, _);
     @include tablet {
+      @include flex(row, _, center);
       flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: center;
-      padding-bottom: 0.7rem;
-      padding: 1rem 0 0.7;
+      padding: 1rem 0 0.7rem;
     }
   }
 
@@ -217,9 +212,7 @@
   }
   &__top {
     @include tablet {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(_, center, space-between);
     }
 
     &__heading {
@@ -227,13 +220,10 @@
     }
     &__left {
       @include tablet {
-        display: flex;
-        align-items: center;
+        @include flex(_, center, _);
       }
     }
     &__icon {
-      padding-right: 2rem;
-      padding-top: 1rem;
       padding: 1rem 2rem 1rem 0;
       @include tablet {
         padding: 1rem 1.5rem;
@@ -253,6 +243,7 @@
       }
     }
   }
+
   address {
     color: $white;
     padding-bottom: 1.5rem;
@@ -268,9 +259,7 @@
 
   &__bottom {
     @include tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      @include flex(row, _, space-between);
     }
     &__email {
       text-decoration: none;
@@ -300,6 +289,7 @@
     padding-right: 0;
   }
 }
+
 .rights {
   @include text-settings(0.8rem, _, _);
   @include tablet {
