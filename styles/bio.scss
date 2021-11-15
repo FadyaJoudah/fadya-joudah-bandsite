@@ -1,6 +1,6 @@
-@use "./typography" as *;
-@use "./variables" as *;
-@use "./mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
 
 .header {
   height: 5.5625rem;
@@ -74,7 +74,7 @@
   @include flex(_, center, _);
   height: 20rem;
   margin-bottom: 2rem;
-  background-image: url("../../assets/Images/hero-bio.jpg");
+  background-image: url(".././assets/Images/hero-bio.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.5);
