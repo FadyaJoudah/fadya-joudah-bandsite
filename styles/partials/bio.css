@@ -245,6 +245,10 @@
   margin: 0.5rem;
   -o-object-fit: cover;
      object-fit: cover;
+  filter: grayscale(90%);
+}
+.gallery__img:hover {
+  filter: grayscale(0);
 }
 @media screen and (min-width: 48rem) {
   .gallery__img {

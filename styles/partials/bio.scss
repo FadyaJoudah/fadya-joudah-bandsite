@@ -185,6 +185,10 @@
     max-width: 100%;
     margin: 0.5rem;
     object-fit: cover;
+    filter: grayscale(90%);
+    &:hover {
+      filter: grayscale(0);
+    }
     @include tablet {
       width: 30%;
     }
