@@ -89,3 +89,56 @@ cwhyte@archentertainment.com
 
 
 ###### Copyright The Bees Knees © 2021 All Rights Reserved
+
+
+## 
+
+
+## Shows
+
+
+### Beautiful Beasts Album \
+Queen of Yellow x For The Stings
+
+
+#### Dates \
+Venue \
+Location
+
+Mon Sept 06 2021 
+
+Ronald Lane 
+
+San Francisco, CA
+
+Tue Sept 21 2021 
+
+Pier 3 East 
+
+San Francisco, CA 
+
+Fri Oct 15 2021 
+
+View Lounge 
+
+San Francisco, CA 
+
+Sat Nov 06 2021 
+
+Hyatt Agency 
+
+San Francisco, CA 
+
+Fri Nov 26 2021
+
+Moscow Center 
+
+San Francisco, CA 
+
+Wed Dec 15 2021 
+
+Press Club 
+
+San Francisco, CA
+
+Buy Tickets
