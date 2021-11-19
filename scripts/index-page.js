@@ -37,14 +37,14 @@ for (let i = 0; i < defaultComments.length; i++) {
 }
 
 function createComment(comment) {
-  // creat article
+  // create article
   let article = document.createElement("article");
   article.classList.add("comments__comment");
   article.classList.add("comment");
 
-  // creat and append img
+  // create and append img
   const avatar = createAvatar(comment.img);
-  // creat comment container
+  // create comment container
   let container = createCommentContent(comment);
 
   article.appendChild(avatar);
@@ -103,7 +103,7 @@ function createCommentContent(comment) {
   infoDiv.appendChild(commentDate);
 
   //creat comment p element
-  let comment = createCommentText(comment.text);
-  container.appendChild(comment);
+  let commentText = createCommentText(comment.text);
+  container.appendChild(commentText);
   return container;
 }
