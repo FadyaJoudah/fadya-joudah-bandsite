@@ -1,0 +1,56 @@
+@use "./partials/typography" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+.hero-shows {
+  background-image: url("../assets/Images/hero-shows.jpg");
+  height: 20rem;
+  color: $white;
+  margin-bottom: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.5);
+  @include flex(column, _, center);
+
+  @include tablet {
+    height: 31.25rem;
+  }
+  @include desktop {
+    height: 45.625rem;
+  }
+  &__top-title {
+    margin: 3rem 0 0 1.25rem;
+    @include tablet {
+      @include text-settings(2rem, 4.25rem, 500);
+      margin-left: 2.5rem;
+    }
+  }
+  &__title {
+    width: 17.5rem;
+    margin: 1rem 0 1rem 1.25rem;
+    @include tablet {
+      @include text-settings(3.6rem, 4.25rem, 700);
+      margin-left: 2.5rem;
+      width: 31.25rem;
+    }
+    @include desktop {
+      @include text-settings(3.75rem, 4.25rem, 700);
+      margin-left: 6.75rem;
+    }
+  }
+  &__container {
+    margin: 0 0 1.5rem 1.5rem;
+    width: 70%;
+    height: 6rem;
+    border-radius: 4px;
+    @include tablet {
+      margin-left: 2.5rem;
+      height: 8rem;
+      width: 50%;
+    }
+  }
+  &__song {
+    width: 100%;
+    height: 100%;
+  }
+}

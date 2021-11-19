@@ -1,7 +1,7 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
-
+@use "./global" as *;
 .header {
   height: 5.5625rem;
   background-color: $band-dark;
@@ -59,6 +59,7 @@
 
     &--active {
       border-bottom: 0.1875rem white solid;
+      font-weight: 700;
     }
 
     @include tablet {
@@ -207,6 +208,61 @@
     @include desktop {
       width: 70rem;
     }
+  }
+}
+
+.form {
+  @include flex(column, flex-start, _);
+  height: 100%;
+  &__img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+
+    border-radius: 50%;
+  }
+  &__heading {
+    margin: 1rem 0 0 1.5rem;
+  }
+  &__img {
+    margin: 1rem 0 0 1.5rem;
+  }
+  &__container {
+    @include flex(row, _, _);
+  }
+  &__form {
+    @include flex(column, flex-start, _);
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    // &__lable {
+    //   background-color: red;
+    // }
+  }
+  &__button {
+    background-color: $band-dark;
+    color: $white;
+    height: 2.5rem;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    border-radius: 0.2rem;
+    border: none;
+  }
+}
+
+.comments {
+  &__comment {
+    &__comment {
+    }
+    &__info {
+    }
+    &__name {
+    }
+    &__date {
+    }
+  }
+  &__avatar {
   }
 }
 

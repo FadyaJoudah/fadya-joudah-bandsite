@@ -4,6 +4,38 @@
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
   src: url("../../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir";
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+form {
+  margin: 0;
+}
+
+ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
 .header {
   height: 5.5625rem;
   background-color: #323232;
@@ -80,6 +112,7 @@
 }
 .nav__item--active {
   border-bottom: 0.1875rem white solid;
+  font-weight: 700;
 }
 @media screen and (min-width: 48rem) {
   .nav__item {
@@ -275,6 +308,52 @@
   .gallery__wrapper {
     width: 70rem;
   }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: _;
+  height: 100%;
+}
+.form__img {
+  width: 2.5rem;
+  height: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.form__heading {
+  margin: 1rem 0 0 1.5rem;
+}
+.form__img {
+  margin: 1rem 0 0 1.5rem;
+}
+.form__container {
+  display: flex;
+  flex-direction: row;
+  align-items: _;
+  justify-content: _;
+}
+.form__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: _;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.form__button {
+  background-color: #323232;
+  color: #ffffff;
+  height: 2.5rem;
+  width: 100%;
+  margin: 1rem 0 0 0;
+  border-radius: 0.2rem;
+  border: none;
 }
 
 .footer {
