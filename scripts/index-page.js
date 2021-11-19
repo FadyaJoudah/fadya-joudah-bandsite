@@ -32,43 +32,24 @@ const commentsSection = document.querySelector(".comments");
 
 for (let i = 0; i < defaultComments.length; i++) {
   let currentComment = defaultComments[i];
+  let commentNode = createComment(currentComment);
+  commentsSection.append(commentNode);
+}
 
+function createComment(comment) {
   // creat article
   let article = document.createElement("article");
   article.classList.add("comments__comment");
   article.classList.add("comment");
-  commentsSection.appendChild(article);
 
   // creat and append img
-  let avatar = createAvatar(defaultComments.img);
-  article.appendChild(avatar);
-
+  const avatar = createAvatar(comment.img);
   // creat comment container
-  let container = document.createElement("div");
-  container.classList.add("comment__content");
+  let container = createCommentContent(comment);
+
+  article.appendChild(avatar);
   article.appendChild(container);
-
-  // creat div for comments ifo
-  let infoDiv = document.createElement("div");
-  infoDiv.classList.add("comment__info");
-  container.appendChild(infoDiv);
-
-  // creat two p elements for comment info
-  let commenter = document.createElement("p");
-  commenter.classList.add("comment__name");
-  commenter.innerText = currentComment.name;
-  infoDiv.appendChild(commenter);
-
-  let commentDate = document.createElement("p");
-  commentDate.classList.add("comment__date");
-  commentDate.innerText = currentComment.date;
-  infoDiv.appendChild(commentDate);
-
-  //creat comment p element
-  let comment = document.createElement("p");
-  comment.classList.add("comment__text");
-  comment.innerText = currentComment.text;
-  container.appendChild(comment);
+  return article;
 }
 
 function createAvatar(img) {
@@ -79,8 +60,50 @@ function createAvatar(img) {
 }
 
 function createName(name) {
+  let commenter = document.createElement("p");
   commenter.classList.add("comment__name");
-  commenter.innerText = currentComment.name;
-
+  commenter.innerText = name;
   return commenter;
+}
+
+function createCommentText(text) {
+  let comment = document.createElement("p");
+  comment.classList.add("comment__text");
+  comment.innerText = text;
+  return comment;
+}
+
+function createDate(date) {
+  let commentDate = document.createElement("p");
+  commentDate.classList.add("comment__date");
+  commentDate.innerText = date;
+  return commentDate;
+}
+
+function createCommentInfo() {
+  let infoDiv = document.createElement("div");
+  document.createElement("div");
+  infoDiv.classList.add("comment__info");
+  return infoDiv;
+}
+
+function createCommentContent(comment) {
+  container = document.createElement("div");
+  container.classList.add("comment__content");
+
+  // creat div for comments ifo
+  let infoDiv = createCommentInfo();
+  container.appendChild(infoDiv);
+
+  // creat two p elements for comment info
+  let commenter = createName(comment.name);
+  infoDiv.appendChild(commenter);
+
+  let commentDate = createDate(comment.date);
+  infoDiv.appendChild(commentDate);
+
+  //creat comment p element
+  let comment = createCommentText(comment.text);
+  container.appendChild(comment);
+  return container;
 }
