@@ -1,4 +1,4 @@
-let defaultComments = [
+const defaultComments = [
   {
     img: {
       src: "",
@@ -32,8 +32,7 @@ const commentsSection = document.querySelector(".comments");
 
 for (let i = 0; i < defaultComments.length; i++) {
   let currentComment = defaultComments[i];
-  let commentNode = createComment(currentComment);
-  commentsSection.append(commentNode);
+  displayComment(currentComment);
 }
 
 function createComment(comment) {
@@ -51,7 +50,10 @@ function createComment(comment) {
   article.appendChild(container);
   return article;
 }
-
+function displayComment(comment) {
+  let commentNode = createComment(currentComment);
+  commentsSection.prepend(commentNode);
+}
 function createAvatar(img) {
   let avatar = document.createElement("img");
   avatar.src = img.src;
@@ -107,3 +109,38 @@ function createCommentContent(comment) {
   container.appendChild(commentText);
   return container;
 }
+
+let submitButton = document.getElementsByClassName("form__button")[0];
+// console.log(submitButton);
+submitButton.addEventListener("click", (e) => {
+  // {
+  //   img: {
+  //     src: "",
+  //     alt: "profile picture",
+  //   },
+  //   name: "Connor Walton",
+  //   date: "02/17/2021",
+  //   text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+  // }
+  let latestComment = {};
+  e.preventDefault();
+  // the first element in the node list is the name input
+  const nameInput = document.getElementsByClassName("form__input")[0];
+  latestComment["name"] = nameInput.value;
+
+  const commenterImg = document.querySelector(".form__img");
+  latestComment["img"] = {
+    alt: "profile picture",
+    src: "",
+    // src: commenterImg.getAttribute("src"),
+  };
+
+  // let commentDate = document.querySelector();
+  latestComment["date"] = new Date();
+  console.log(latestComment);
+
+  const commenterText = document.querySelector(".form__text");
+  latestComment["text"] = commenterText.value;
+
+  displayComment(latestComment);
+});

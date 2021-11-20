@@ -129,12 +129,14 @@
         />
         <form action="submit" method="get" class="form__form">
           <label for="name" class="form__label">NAME</label>
-          <input type="text" name="name" required />
+          <input type="text" name="name" class="form__input" required />
 
-          <label for="comment" class="form__lable">COMMENT</label>
-          <input type="text" />
+          <label for="comment" class="form__label">COMMENT</label>
+          <textarea type="text area" class="form__text"></textarea>
 
-          <input type="submit" value="comment" class="form__button" />
+          <button type="submit" value="comment" class="form__button">
+            comment
+          </button>
         </form>
       </div>
     </section>
