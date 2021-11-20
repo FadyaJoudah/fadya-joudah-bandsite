@@ -117,28 +117,29 @@ function clearComments() {
 let submitButton = document.getElementsByClassName("form__button")[0];
 // console.log(submitButton);
 submitButton.addEventListener("click", (e) => {
-  let latestComment = {};
   e.preventDefault();
-  // the first element in the node list is the name input
-  const nameInput = document.getElementsByClassName("form__input")[0];
-  latestComment["name"] = nameInput.value;
 
+  const nameInput = document.getElementsByClassName("form__input")[0];
+  const commenterText = document.querySelector(".form__text");
   const commenterImg = document.querySelector(".form__img");
-  latestComment["img"] = {
-    alt: "profile picture",
-    src: "",
-    // src: commenterImg.getAttribute("src"),
+
+  const latestComment = {
+    name: nameInput.value,
+    img: {
+      src: "",
+      // src: commenterImg.getAttribute("src"),
+      alt: "Profile Avatar",
+    },
+    text: commenterText.value,
+    date: new Date(),
   };
 
-  // let commentDate = document.querySelector();
-  latestComment["date"] = new Date();
-  console.log(latestComment);
-
-  const commenterText = document.querySelector(".form__text");
-  latestComment["text"] = commenterText.value;
-
   defaultComments.push(latestComment);
-  //clean section
+
+  //clean section from old comments
   clearComments();
   renderComments();
+
+  nameInput.value = "";
+  commenterText.value = "";
 });
