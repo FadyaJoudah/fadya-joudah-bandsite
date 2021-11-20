@@ -29,12 +29,13 @@ const defaultComments = [
 ];
 
 const commentsSection = document.querySelector(".comments");
-
-for (let i = 0; i < defaultComments.length; i++) {
-  let currentComment = defaultComments[i];
-  displayComment(currentComment);
+renderComments();
+function renderComments() {
+  for (let i = 0; i < defaultComments.length; i++) {
+    let currentComment = defaultComments[i];
+    displayComment(currentComment);
+  }
 }
-
 function createComment(comment) {
   // create article
   let article = document.createElement("article");
@@ -51,7 +52,7 @@ function createComment(comment) {
   return article;
 }
 function displayComment(comment) {
-  let commentNode = createComment(currentComment);
+  let commentNode = createComment(comment);
   commentsSection.prepend(commentNode);
 }
 function createAvatar(img) {
@@ -109,19 +110,13 @@ function createCommentContent(comment) {
   container.appendChild(commentText);
   return container;
 }
+function clearComments() {
+  commentsSection.innerHTML = "";
+}
 
 let submitButton = document.getElementsByClassName("form__button")[0];
 // console.log(submitButton);
 submitButton.addEventListener("click", (e) => {
-  // {
-  //   img: {
-  //     src: "",
-  //     alt: "profile picture",
-  //   },
-  //   name: "Connor Walton",
-  //   date: "02/17/2021",
-  //   text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  // }
   let latestComment = {};
   e.preventDefault();
   // the first element in the node list is the name input
@@ -142,5 +137,8 @@ submitButton.addEventListener("click", (e) => {
   const commenterText = document.querySelector(".form__text");
   latestComment["text"] = commenterText.value;
 
-  displayComment(latestComment);
+  defaultComments.push(latestComment);
+  //clean section
+  clearComments();
+  renderComments();
 });
