@@ -29,13 +29,16 @@ const defaultComments = [
 ];
 
 const commentsSection = document.querySelector(".comments");
+
 renderComments();
+
 function renderComments() {
   for (let i = 0; i < defaultComments.length; i++) {
     let currentComment = defaultComments[i];
     displayComment(currentComment);
   }
 }
+
 function createComment(comment) {
   // create article
   let article = document.createElement("article");
@@ -51,10 +54,12 @@ function createComment(comment) {
   article.appendChild(container);
   return article;
 }
+// adds (prepend) the new comment to <section class="comments"/>
 function displayComment(comment) {
   let commentNode = createComment(comment);
   commentsSection.prepend(commentNode);
 }
+
 function createAvatar(img) {
   let avatar = document.createElement("img");
   avatar.src = img.src;
@@ -115,7 +120,7 @@ function clearComments() {
 }
 
 let submitButton = document.getElementsByClassName("form__button")[0];
-// console.log(submitButton);
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
