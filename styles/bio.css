@@ -138,7 +138,7 @@ ul {
   background-image: url(".././assets/Images/hero-bio.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.5);
+  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.4);
 }
 @media screen and (min-width: 48rem) {
   .hero {
@@ -345,9 +345,13 @@ ul {
 .form__text {
   width: 100%;
   height: 6rem;
-  background-color: #e1e1e1;
+  background-color: #fafafa;
   border-radius: 0.2rem;
   border: 1px solid #afafaf;
+  font-family: "Avenir";
+}
+.form__text:active {
+  border: 1px solid black;
 }
 @media screen and (min-width: 48rem) {
   .form__text {
@@ -364,7 +368,7 @@ ul {
   width: 100%;
   height: 2rem;
   margin-bottom: 1rem;
-  background-color: #e1e1e1;
+  background-color: #fafafa;
   border-radius: 0.2rem;
   border: 1px solid #afafaf;
 }
@@ -417,8 +421,12 @@ ul {
   }
 }
 
+#comment-button:hover {
+  background-color: #000000;
+}
+
 .line {
-  border: 1px solid #afafaf;
+  border: 1px solid #e1e1e1;
   width: 93%;
   display: flex;
   flex-direction: _;
@@ -426,6 +434,7 @@ ul {
   justify-content: _;
   align-self: center;
 }
+
 .comments {
   margin: 0.5rem;
   display: flex;
@@ -436,7 +445,7 @@ ul {
 }
 .comments__comment {
   width: 100%;
-  border-bottom: 2px solid #afafaf;
+  border-bottom: 2px solid #e1e1e1;
   display: flex;
   flex-direction: row;
   align-items: _;

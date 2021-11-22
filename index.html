@@ -142,17 +142,24 @@
             placeholder="Add a new Comment"
             type="text area"
             class="form__text"
+            required
           ></textarea>
 
-          <button type="submit" value="comment" class="form__button">
+          <button
+            type="submit"
+            value="comment"
+            class="form__button"
+            id="comment-button"
+          >
             COMMENT
           </button>
         </form>
       </div>
       <div class="line"></div>
     </section>
-    <section class="comments">
-      <!--  <article class="comments__comment comment">
+
+    <!-- <section class="comments">
+       <article class="comments__comment comment">
           <img src="" alt="" class="comment__avatar" />
           <div class="comment__content">
             <div class="comment__info">
@@ -164,9 +171,9 @@
             everything that makes up this majestic work deserves reverence. Let
             us appreciate this for what it is and what it contains.
           </p>
-        </div> -->
-      <!-- </article> -->
-    </section>
+        </div> 
+       </article> 
+    </section>-->
 
     <footer class="footer">
       <!-- the wrapper div is to keep the child element form expanding when the page is bigger  -->
@@ -174,7 +181,11 @@
         <section class="footer__top">
           <div class="footer__top__left top-left">
             <h1 class="top-left__heading footer__top__heading">Get in Touch</h1>
-            <a href="https://www.instagram.com/" class="footer__top__link">
+            <a
+              href="https://www.instagram.com/"
+              class="footer__top__link"
+              target="_blank"
+            >
               <img
                 src="./assets/Icons/SVG/Icon-instagram.svg"
                 alt="instagram"
@@ -182,7 +193,11 @@
               />
             </a>
 
-            <a href="https://www.facebook.com/" class="footer__top__link">
+            <a
+              href="https://www.facebook.com/"
+              class="footer__top__link"
+              target="_blank"
+            >
               <img
                 src="./assets/Icons/SVG/Icon-facebook.svg"
                 alt="facebook"
@@ -190,7 +205,11 @@
               />
             </a>
 
-            <a href="https://twitter.com/" class="footer__top__link">
+            <a
+              href="https://twitter.com/"
+              class="footer__top__link"
+              target="_blank"
+            >
               <img
                 src="./assets/Icons/SVG/Icon-twitter.svg"
                 alt="twitter"

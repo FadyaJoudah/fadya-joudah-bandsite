@@ -78,7 +78,7 @@
   background-image: url(".././assets/Images/hero-bio.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.5);
+  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.4);
 
   @include tablet {
     height: 31.25rem;
@@ -231,8 +231,6 @@
   &__heading {
     margin: 1rem 0 0 1.5rem;
     @include tablet {
-      // @include flex(_, _, _);
-      // align-self: flex-start;
     }
   }
   &__img {
@@ -241,9 +239,14 @@
   &__text {
     width: 100%;
     height: 6rem;
-    background-color: $mercury;
+    background-color: $alabaster;
     border-radius: 0.2rem;
     border: 1px solid $silver;
+    font-family: "Avenir";
+    &:active {
+      border: 1px solid black;
+    }
+
     @include tablet {
       height: 5rem;
     }
@@ -256,9 +259,10 @@
     width: 100%;
     height: 2rem;
     margin-bottom: 1rem;
-    background-color: $mercury;
+    background-color: $alabaster;
     border-radius: 0.2rem;
     border: 1px solid $silver;
+
     @include tablet {
       height: 3rem;
     }
@@ -293,19 +297,20 @@
       @include flex(_, center, center);
       align-self: flex-end;
       text-align: center;
-      // @include flex(_, _, _);
-      // align-self: flex-en;
     }
   }
 }
+#comment-button {
+  &:hover {
+    background-color: $band-black;
+  }
+}
+
 .line {
-  border: 1px solid $silver;
+  border: 1px solid $mercury;
   width: 93%;
   @include flex(_, center, _);
   align-self: center;
-  @include tablet {
-    // width: ;
-  }
 }
 
 .comments {
@@ -314,7 +319,7 @@
   width: 93%;
   &__comment {
     width: 100%;
-    border-bottom: 2px solid $silver;
+    border-bottom: 2px solid $mercury;
     @include flex(row, _, _);
   }
   &__info {

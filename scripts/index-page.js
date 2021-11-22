@@ -1,7 +1,7 @@
 const defaultComments = [
   {
     img: {
-      src: "./assets/Images/defult-profile-picture.png",
+      src: "./assets/Images/default-profile-picture.png",
       alt: "profile picture",
     },
     name: "Connor Walton",
@@ -10,7 +10,7 @@ const defaultComments = [
   },
   {
     img: {
-      src: "./assets/Images/defult-profile-picture.png",
+      src: "./assets/Images/default-profile-picture.png",
       alt: "profile picture",
     },
     name: "Emilie Beach",
@@ -19,7 +19,7 @@ const defaultComments = [
   },
   {
     img: {
-      src: "./assets/Images/defult-profile-picture.png",
+      src: "./assets/Images/default-profile-picture.png",
       alt: "profile picture",
     },
     name: "Miles Acosta",
@@ -32,13 +32,6 @@ const commentsSection = document.createElement("section");
 commentsSection.classList.add("comments");
 const formSection = document.querySelector(".form");
 formSection.append(commentsSection);
-// const position = document.querySelector(".form");
-
-// const commentsWrapper = document.createElement("div");
-// const commentsSection = document.createElement("section");
-// commentsWrapper.classList.add("comments-wrapper");
-// commentsSection.classList.add("comments");
-// commentsSection.insertAdjacentHTML(position);
 
 renderComments();
 

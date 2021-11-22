@@ -67,13 +67,13 @@ function creatEventInfoNode(label, value, modifier) {
 }
 
 function createTableHeading() {
-  // create hidden info
+  // create hidden info div
   const tableHeading = document.createElement("div");
   tableHeading.classList.add("shows__info");
   tableHeading.classList.add("shows__info--hidden");
   showsList.prepend(tableHeading);
 
-  // elements of the hidden info div
+  // elements of the hidden info inside the div
   const infoHeading = document.createElement("p");
   const infoHeading2 = document.createElement("p");
   const infoHeading3 = document.createElement("p");
@@ -110,7 +110,6 @@ function createShow(show) {
   buyTicketSection.classList.add("show");
   showsList.append(buyTicketSection);
   buyTicketSection.append(dateNode, venueNode, locationNode);
-  console.log(buyTicketSection);
 
   const buttonEle = document.createElement("button");
   buttonEle.classList.add("show__button");

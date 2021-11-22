@@ -9,7 +9,7 @@
   margin-bottom: 2rem;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.5);
+  box-shadow: inset 0 0 0 125rem rgba(32, 32, 32, 0.4);
   @include flex(column, _, center);
 
   @include tablet {
@@ -51,10 +51,24 @@
       height: 8rem;
       width: 50%;
     }
+    @include desktop {
+      width: 30%;
+      height: 10rem;
+    }
+  }
+  &__wrapper {
+    @include desktop {
+      @include flex(row, center, _);
+    }
   }
   &__song {
     width: 100%;
     height: 100%;
+  }
+}
+.hero-shows-wrapper {
+  @include desktop {
+    @include flex(row, _, _);
   }
 }
 
@@ -85,10 +99,16 @@
 }
 
 .show {
+  &:hover {
+    background-color: $alabaster;
+  }
+  &:active {
+    background-color: $silver;
+  }
   @include tablet {
     @include flex(row, flex-end, space-evenly);
   }
-  border-bottom: 1px solid $silver;
+  border-bottom: 1px solid $mercury;
   padding-bottom: 0.5rem;
   &__label {
     color: $silver;
