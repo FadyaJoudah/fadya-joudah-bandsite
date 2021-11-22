@@ -317,6 +317,18 @@ ul {
   justify-content: _;
   height: 100%;
 }
+@media screen and (min-width: 48rem) {
+  .form {
+    width: 40rem;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .form {
+    width: 50rem;
+    margin: 0 auto;
+  }
+}
 .form__img {
   width: 2.5rem;
   height: 2.5rem;
@@ -340,7 +352,6 @@ ul {
 @media screen and (min-width: 48rem) {
   .form__text {
     height: 5rem;
-    width: 40rem;
   }
 }
 .form__label {
@@ -360,7 +371,6 @@ ul {
 @media screen and (min-width: 48rem) {
   .form__input {
     height: 3rem;
-    width: 40rem;
   }
 }
 .form__wrapper {
@@ -382,11 +392,6 @@ ul {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-}
-@media screen and (min-width: 48rem) {
-  .form__section {
-    width: 42.4rem;
-  }
 }
 .form__button {
   background-color: #323232;
@@ -458,11 +463,6 @@ ul {
 }
 .comments__content {
   width: 100%;
-}
-
-.form-wrapper {
-  width: 30rem;
-  margin-top: 0 auto;
 }
 
 .footer {

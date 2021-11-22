@@ -213,15 +213,14 @@
 
 .form {
   @include flex(column, flex-start, _);
-  // @include tablet {
-  //   @include flex(column, flex-start, _);
-  //   width: 40rem;
-  //   margin: 0auto;
-  // }
-  // @include desktop {
-  //   width: 50rem;
-  //   margin: 0 auto;
-  // }
+  @include tablet {
+    width: 40rem;
+    margin: 0 auto;
+  }
+  @include desktop {
+    width: 50rem;
+    margin: 0 auto;
+  }
   height: 100%;
   &__img {
     width: 2.5rem;
@@ -248,7 +247,6 @@
 
     @include tablet {
       height: 5rem;
-      width: 40rem;
     }
   }
   &__label {
@@ -264,7 +262,6 @@
     border: 1px solid $silver;
     @include tablet {
       height: 3rem;
-      width: 40rem;
     }
   }
   &__wrapper {
@@ -281,7 +278,6 @@
     margin: 8px 0;
     box-sizing: border-box;
     @include tablet {
-      width: 42.4rem;
     }
   }
   &__button {
@@ -342,10 +338,6 @@
   &__content {
     width: 100%;
   }
-}
-.form-wrapper {
-  width: 30rem;
-  margin-top: 0 auto;
 }
 
 .footer {
