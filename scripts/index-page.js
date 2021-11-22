@@ -6,7 +6,7 @@ const defaultComments = [
     },
     name: "Connor Walton",
     date: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. let us appreciate this for what it is and what it contains.",
   },
   {
     img: {
@@ -51,14 +51,14 @@ function renderComments() {
 
 function createComment(comment) {
   // create article
-  let article = document.createElement("article");
+  const article = document.createElement("article");
   article.classList.add("comments__comment");
   article.classList.add("comment");
 
   // create and append img
   const avatar = createAvatar(comment.img);
   // create comment container
-  let container = createCommentContent(comment);
+  const container = createCommentContent(comment);
 
   article.appendChild(avatar);
   article.appendChild(container);
@@ -66,12 +66,12 @@ function createComment(comment) {
 }
 // adds (prepend) the new comment to <section class="comments"/>
 function displayComment(comment) {
-  let commentNode = createComment(comment);
+  const commentNode = createComment(comment);
   commentsSection.prepend(commentNode);
 }
 
 function createAvatar(img) {
-  let avatar = document.createElement("img");
+  const avatar = document.createElement("img");
   avatar.classList.add("comments__img");
   avatar.src = img.src;
   avatar.alt = img.alt;
@@ -79,28 +79,28 @@ function createAvatar(img) {
 }
 
 function createName(name) {
-  let commenter = document.createElement("p");
+  const commenter = document.createElement("p");
   commenter.classList.add("comments__name");
   commenter.innerText = name;
   return commenter;
 }
 
 function createCommentText(text) {
-  let comment = document.createElement("p");
+  const comment = document.createElement("p");
   comment.classList.add("comments__text");
   comment.innerText = text;
   return comment;
 }
 
 function createDate(date) {
-  let commentDate = document.createElement("p");
+  const commentDate = document.createElement("p");
   commentDate.classList.add("comments__date");
   commentDate.innerText = date;
   return commentDate;
 }
 
 function createCommentInfo() {
-  let infoDiv = document.createElement("div");
+  const infoDiv = document.createElement("div");
   document.createElement("div");
   infoDiv.classList.add("comments__info");
   return infoDiv;
@@ -111,18 +111,18 @@ function createCommentContent(comment) {
   container.classList.add("comments__content");
 
   // creat div for comments ifo
-  let infoDiv = createCommentInfo();
+  const infoDiv = createCommentInfo();
   container.appendChild(infoDiv);
 
   // creat two p elements for comment info
-  let commenter = createName(comment.name);
+  const commenter = createName(comment.name);
   infoDiv.appendChild(commenter);
 
-  let commentDate = createDate(comment.date);
+  const commentDate = createDate(comment.date);
   infoDiv.appendChild(commentDate);
 
   //creat comment p element
-  let commentText = createCommentText(comment.text);
+  const commentText = createCommentText(comment.text);
   container.appendChild(commentText);
   return container;
 }
@@ -130,7 +130,7 @@ function clearComments() {
   commentsSection.innerHTML = "";
 }
 
-let submitButton = document.getElementsByClassName("form__button")[0];
+const submitButton = document.getElementsByClassName("form__button")[0];
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();

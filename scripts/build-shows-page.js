@@ -1,4 +1,4 @@
-let showsInfo = [
+const showsInfo = [
   {
     date: "Mon Sept 06 2021",
     venue: "Ronald Lane",
@@ -48,26 +48,26 @@ showSection.prepend(heading);
 const hiddenInfo = document.createElement("div");
 hiddenInfo.classList.add("shows__info");
 hiddenInfo.classList.add("shows__info--hidden");
-showSection.appendChild(hiddenInfo);
+showsList.prepend(hiddenInfo);
 // todo: function creatHiddenInfo() {
 // elements of the hidden info div
-// const infoHeading = document.createElement("p");
-// const infoHeading2 = document.createElement("p");
-// const infoHeading3 = document.createElement("p");
+const infoHeading = document.createElement("p");
+const infoHeading2 = document.createElement("p");
+const infoHeading3 = document.createElement("p");
 
-// infoHeading.classList.add("shows__details");
-// infoHeading2.classList.add("shows__details");
-// infoHeading3.classList.add("shows__details");
+infoHeading.classList.add("shows__details");
+infoHeading2.classList.add("shows__details");
+infoHeading3.classList.add("shows__details");
 
-// infoHeading.innerText = "DATE";
-// infoHeading2.innerText = "VENUE";
-// infoHeading3.innerText = "LOCATION";
-// hiddenInfo.append(infoHeading, infoHeading2, infoHeading3);
+infoHeading.innerText = "DATE";
+infoHeading2.innerText = "VENUE";
+infoHeading3.innerText = "LOCATION";
+hiddenInfo.append(infoHeading, infoHeading2, infoHeading3);
 
 function renderTicket() {}
 for (let i = 0; i < showsInfo.length; i++) {
   const currentShow = showsInfo[i];
-  const dateNode = creatEventInfoNode("DATE", currentShow.date);
+  const dateNode = creatEventInfoNode("DATE", currentShow.date, "bold");
   const venueNode = creatEventInfoNode("VENUE", currentShow.venue);
   const locationNode = creatEventInfoNode("LOCATION", currentShow.location);
 
@@ -84,7 +84,7 @@ for (let i = 0; i < showsInfo.length; i++) {
   buyTicketSection.append(buttonEle);
 }
 console.log(showSection);
-function creatEventInfoNode(label, value) {
+function creatEventInfoNode(label, value, modifier) {
   const eventInfoSection = document.createElement("div");
   eventInfoSection.classList.add("show__info-section");
 
@@ -93,6 +93,9 @@ function creatEventInfoNode(label, value) {
 
   const eventInfo = document.createElement("p");
   eventInfo.classList.add("show__details");
+  if (modifier !== undefined) {
+    eventInfo.classList.add(`show__details--${modifier}`);
+  }
 
   eventInfoSection.append(eventTitle, eventInfo);
 

@@ -57,23 +57,53 @@
 
 .shows {
   @include flex(column, _, _);
-  &__hidden-info {
+  &__info {
     display: none;
+    @include tablet {
+      // visibility: visible;
+      @include flex(row, center, space-evenly);
+      width: 79%;
+    }
   }
   &__show {
     @include flex(column, stretch, center);
-    margin: 2rem;
+    margin: 1rem;
   }
   &__title {
-    margin: 2rem;
+    margin: 1rem;
+    @include tablet {
+      margin: 2rem 0rem 2rem 4rem;
+    }
+  }
+  &__details {
+    color: $silver;
+    @include flex(_, _, _);
+    align-self: flex-end;
   }
 }
 
 .show {
+  @include tablet {
+    @include flex(row, flex-end, space-evenly);
+  }
+  border-bottom: 1px solid $silver;
+  padding-bottom: 0.5rem;
   &__label {
     color: $silver;
     @include text-settings(0.8rem, _, _);
+    @include tablet {
+      display: none;
+    }
   }
+  &__details {
+    color: black;
+    @include flex(_, _, _);
+    align-self: flex-end;
+    &--bold {
+      @include text-settings(_, _, bold);
+    }
+  }
+
   &__button {
     background-color: $band-dark;
     color: $white;
@@ -95,4 +125,9 @@
     margin-bottom: 0.5rem;
   }
 }
-// .shows-list
+.shows-list {
+  @include desktop {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
