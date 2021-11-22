@@ -75,4 +75,57 @@
 .hero-shows__song {
   width: 100%;
   height: 100%;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  align-items: _;
+  justify-content: _;
+}
+.shows__hidden-info {
+  display: none;
+}
+.shows__show {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: 2rem;
+}
+.shows__title {
+  margin: 2rem;
+}
+
+.show__label {
+  color: #afafaf;
+  font-size: 0.8rem;
+  line-height: _;
+  font-weight: _;
+}
+.show__button {
+  background-color: #323232;
+  color: #ffffff;
+  height: 2.5rem;
+  width: 100%;
+  margin: 1rem 0 0 0;
+  border-radius: 0.2rem;
+  border: none;
+  font-size: 1rem;
+  line-height: _;
+  font-weight: _;
+}
+@media screen and (min-width: 48rem) {
+  .show__button {
+    width: 9rem;
+    display: flex;
+    flex-direction: _;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    text-align: center;
+  }
+}
+.show__info-section {
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=shows.css.map */

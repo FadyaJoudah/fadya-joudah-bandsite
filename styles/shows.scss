@@ -54,3 +54,45 @@
     height: 100%;
   }
 }
+
+.shows {
+  @include flex(column, _, _);
+  &__hidden-info {
+    display: none;
+  }
+  &__show {
+    @include flex(column, stretch, center);
+    margin: 2rem;
+  }
+  &__title {
+    margin: 2rem;
+  }
+}
+
+.show {
+  &__label {
+    color: $silver;
+    @include text-settings(0.8rem, _, _);
+  }
+  &__button {
+    background-color: $band-dark;
+    color: $white;
+    height: 2.5rem;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    border-radius: 0.2rem;
+    border: none;
+    @include text-settings(1rem, _, _);
+    @include tablet {
+      width: 9rem;
+      @include flex(_, center, center);
+      align-self: flex-end;
+      text-align: center;
+    }
+  }
+
+  &__info-section {
+    margin-bottom: 0.5rem;
+  }
+}
+// .shows-list
