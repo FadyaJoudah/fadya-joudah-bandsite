@@ -120,33 +120,46 @@
       </div>
     </section>
     <section class="form">
-      <h2 class="form__heading">join the Conversation</h2>
+      <h2 class="form__heading">Join the Conversation</h2>
       <div class="form__container">
         <img
           src="./assets/Images/Mohan-muruge.jpg"
           alt="profile picture"
           class="form__img"
         />
-        <form action="submit" method="get" class="form__form">
-          <label for="name" class="form__label">NAME</label>
-          <input type="text" name="name" class="form__input" required />
+        <div class="form__wrapper">
+          <form action="submit" method="get" class="form__section">
+            <label for="name" class="form__label">NAME</label>
+            <input
+              placeholder="Enter you name"
+              type="text"
+              name="name"
+              class="form__input"
+              required
+            />
 
-          <label for="comment" class="form__label">COMMENT</label>
-          <textarea type="text area" class="form__text"></textarea>
+            <label for="comment" class="form__label">COMMENT</label>
+            <input
+              placeholder="Add a new Comment"
+              type="text area"
+              class="form__text"
+            />
 
-          <button type="submit" value="comment" class="form__button">
-            comment
-          </button>
-        </form>
+            <button type="submit" value="comment" class="form__button">
+              COMMENT
+            </button>
+          </form>
+        </div>
       </div>
+      <div class="line"></div>
     </section>
     <section class="comments">
-      <!-- <article class="comments__comment comment">
-        <img src="" alt="" class="comment__avatar" />
-        <div class="comment__content">
-          <div class="comment__info">
-            <p class="comment__name">Connor Walton</p>
-            <p class="comment__date">02/17/2021</p>
+      <!--  <article class="comments__comment comment">
+          <img src="" alt="" class="comment__avatar" />
+          <div class="comment__content">
+            <div class="comment__info">
+              <p class="comment__name">Connor Walton</p>
+              <p class="comment__date">02/17/2021</p>
           </div>
           <p class="comment__text">
             This is art. This is inexplicable magic expressed in the purest way,

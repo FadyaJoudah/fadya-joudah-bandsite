@@ -213,32 +213,76 @@
 
 .form {
   @include flex(column, flex-start, _);
+  // @include tablet {
+  //   @include flex(column, flex-start, _);
+  //   width: 40rem;
+  //   margin: 0auto;
+  // }
+  // @include desktop {
+  //   width: 50rem;
+  //   margin: 0 auto;
+  // }
   height: 100%;
   &__img {
     width: 2.5rem;
     height: 2.5rem;
     object-fit: cover;
-
     border-radius: 50%;
   }
   &__heading {
     margin: 1rem 0 0 1.5rem;
+    @include tablet {
+      // @include flex(_, _, _);
+      // align-self: flex-start;
+    }
   }
   &__img {
-    margin: 1rem 0 0 1.5rem;
+    margin: 2.0625rem 0 0 1.5rem;
+  }
+  &__text {
+    width: 100%;
+    height: 6rem;
+    background-color: $mercury;
+    border-radius: 0.2rem;
+    border: 1px solid $silver;
+
+    @include tablet {
+      height: 5rem;
+      width: 40rem;
+    }
+  }
+  &__label {
+    color: $silver;
+    @include text-settings(0.8rem, _, _);
+  }
+  &__input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    background-color: $mercury;
+    border-radius: 0.2rem;
+    border: 1px solid $silver;
+    @include tablet {
+      height: 3rem;
+      width: 40rem;
+    }
+  }
+  &__wrapper {
+    width: 20rem;
   }
   &__container {
     @include flex(row, _, _);
+    width: 100%;
   }
-  &__form {
+  &__section {
     @include flex(column, flex-start, _);
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    // &__lable {
-    //   background-color: red;
-    // }
+    @include tablet {
+      width: 42.4rem;
+    }
   }
   &__button {
     background-color: $band-dark;
@@ -248,23 +292,61 @@
     margin: 1rem 0 0 0;
     border-radius: 0.2rem;
     border: none;
+    @include text-settings(1rem, _, _);
+    @include tablet {
+      width: 9rem;
+      @include flex(_, center, center);
+      align-self: flex-end;
+      text-align: center;
+      // @include flex(_, _, _);
+      // align-self: flex-en;
+    }
+  }
+}
+.line {
+  border: 1px solid $silver;
+  width: 93%;
+  @include flex(_, center, _);
+  align-self: center;
+  @include tablet {
+    // width: ;
   }
 }
 
-// .comments {
-//   &__comment {
-//     &__comment {
-//     }
-//     &__info {
-//     }
-//     &__name {
-//     }
-//     &__date {
-//     }
-//   }
-//   &__avatar {
-//   }
-// }
+.comments {
+  margin: 0.5rem;
+  @include flex(column, center, _);
+  width: 93%;
+  &__comment {
+    width: 100%;
+    border-bottom: 2px solid $silver;
+    @include flex(row, _, _);
+  }
+  &__info {
+    @include flex(row, _, space-between);
+    padding: 0.5rem;
+    width: 100%;
+  }
+  &__img {
+    margin: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__text {
+    margin: 0.5rem;
+  }
+
+  &__content {
+    width: 100%;
+  }
+}
+.form-wrapper {
+  width: 30rem;
+  margin-top: 0 auto;
+}
 
 .footer {
   padding: 1rem 1rem 1.7rem;
@@ -332,6 +414,9 @@
       text-decoration: none;
       color: $white;
       @include text-settings(0.7rem, _, _);
+      @include tablet {
+        @include text-settings(0.7rem, _, _);
+      }
     }
     &__info {
       margin-bottom: 1rem;

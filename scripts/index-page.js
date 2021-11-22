@@ -1,7 +1,7 @@
 const defaultComments = [
   {
     img: {
-      src: "",
+      src: "./assets/Images/defult-profile-picture.png",
       alt: "profile picture",
     },
     name: "Connor Walton",
@@ -10,7 +10,7 @@ const defaultComments = [
   },
   {
     img: {
-      src: "",
+      src: "./assets/Images/defult-profile-picture.png",
       alt: "profile picture",
     },
     name: "Emilie Beach",
@@ -19,7 +19,7 @@ const defaultComments = [
   },
   {
     img: {
-      src: "",
+      src: "./assets/Images/defult-profile-picture.png",
       alt: "profile picture",
     },
     name: "Miles Acosta",
@@ -28,7 +28,17 @@ const defaultComments = [
   },
 ];
 
-const commentsSection = document.querySelector(".comments");
+const commentsSection = document.createElement("section");
+commentsSection.classList.add("comments");
+const formSection = document.querySelector(".form");
+formSection.append(commentsSection);
+// const position = document.querySelector(".form");
+
+// const commentsWrapper = document.createElement("div");
+// const commentsSection = document.createElement("section");
+// commentsWrapper.classList.add("comments-wrapper");
+// commentsSection.classList.add("comments");
+// commentsSection.insertAdjacentHTML(position);
 
 renderComments();
 
@@ -62,6 +72,7 @@ function displayComment(comment) {
 
 function createAvatar(img) {
   let avatar = document.createElement("img");
+  avatar.classList.add("comments__img");
   avatar.src = img.src;
   avatar.alt = img.alt;
   return avatar;
@@ -69,21 +80,21 @@ function createAvatar(img) {
 
 function createName(name) {
   let commenter = document.createElement("p");
-  commenter.classList.add("comment__name");
+  commenter.classList.add("comments__name");
   commenter.innerText = name;
   return commenter;
 }
 
 function createCommentText(text) {
   let comment = document.createElement("p");
-  comment.classList.add("comment__text");
+  comment.classList.add("comments__text");
   comment.innerText = text;
   return comment;
 }
 
 function createDate(date) {
   let commentDate = document.createElement("p");
-  commentDate.classList.add("comment__date");
+  commentDate.classList.add("comments__date");
   commentDate.innerText = date;
   return commentDate;
 }
@@ -91,13 +102,13 @@ function createDate(date) {
 function createCommentInfo() {
   let infoDiv = document.createElement("div");
   document.createElement("div");
-  infoDiv.classList.add("comment__info");
+  infoDiv.classList.add("comments__info");
   return infoDiv;
 }
 
 function createCommentContent(comment) {
   container = document.createElement("div");
-  container.classList.add("comment__content");
+  container.classList.add("comments__content");
 
   // creat div for comments ifo
   let infoDiv = createCommentInfo();
@@ -131,12 +142,11 @@ submitButton.addEventListener("click", (e) => {
   const latestComment = {
     name: nameInput.value,
     img: {
-      src: "",
-      // src: commenterImg.getAttribute("src"),
+      src: commenterImg.getAttribute("src"),
       alt: "Profile Avatar",
     },
     text: commenterText.value,
-    date: new Date(),
+    date: new Date().toLocaleDateString("en-US"),
   };
 
   defaultComments.push(latestComment);
