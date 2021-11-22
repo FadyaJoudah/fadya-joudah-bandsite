@@ -38,6 +38,11 @@
     margin-left: 2.5rem;
   }
 }
+@media screen and (min-width: 80rem) {
+  .hero-shows__top-title {
+    margin-left: 7rem;
+  }
+}
 .hero-shows__title {
   width: 17.5rem;
   margin: 1rem 0 1rem 1.25rem;

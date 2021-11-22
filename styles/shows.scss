@@ -24,6 +24,9 @@
       @include text-settings(2rem, 4.25rem, 500);
       margin-left: 2.5rem;
     }
+    @include desktop {
+      margin-left: 7rem;
+    }
   }
   &__title {
     width: 17.5rem;
@@ -60,7 +63,6 @@
   &__info {
     display: none;
     @include tablet {
-      // visibility: visible;
       @include flex(row, center, space-evenly);
       width: 79%;
     }
