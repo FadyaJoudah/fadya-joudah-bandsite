@@ -31,7 +31,6 @@ function displayComment(comment) {
 function createAvatar(img) {
   const avatar = document.createElement("img");
   avatar.classList.add("comments__img");
-  // console.log(avatar, img);
   if (img) {
     avatar.src = img.src;
   }
@@ -58,7 +57,7 @@ function createCommentText(text) {
 function createDate(date) {
   const commentDate = document.createElement("p");
   commentDate.classList.add("comments__date");
-  commentDate.innerText = date;
+  commentDate.innerText = new Date(date * 1000).toLocaleDateString("en-US");
   return commentDate;
 }
 
@@ -92,36 +91,6 @@ function createCommentContent(comment) {
 function clearComments() {
   commentsSection.innerHTML = "";
 }
-
-// let defaultComments = [
-//   {
-//     img: {
-//       src: "./assets/Images/default-profile-picture.png",
-//       alt: "profile picture",
-//     },
-//     name: "Connor Walton",
-//     date: "02/17/2021",
-//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     img: {
-//       src: "./assets/Images/default-profile-picture.png",
-//       alt: "profile picture",
-//     },
-//     name: "Emilie Beach",
-//     date: "01/09/2021",
-//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     img: {
-//       src: "./assets/Images/default-profile-picture.png",
-//       alt: "profile picture",
-//     },
-//     name: "Miles Acosta",
-//     date: "12/20/2020",
-//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
 
 const commentsSection = document.createElement("section");
 commentsSection.classList.add("comments");
@@ -158,7 +127,6 @@ submitButton.addEventListener("click", (e) => {
 });
 
 function getComments() {
-  // console.log("fado is  killing it");
   axios
     .get(
       'https://project-1-api.herokuapp.com/comments?api_key="69a82381-da8f-44fe-8e3a-9193c33b95f9"'
@@ -174,5 +142,3 @@ function getComments() {
     });
 }
 getComments();
-
-// console.log(getComments());
