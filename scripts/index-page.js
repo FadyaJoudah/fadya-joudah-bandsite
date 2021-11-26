@@ -1,43 +1,7 @@
-const defaultComments = [
-  {
-    img: {
-      src: "./assets/Images/default-profile-picture.png",
-      alt: "profile picture",
-    },
-    name: "Connor Walton",
-    date: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. let us appreciate this for what it is and what it contains.",
-  },
-  {
-    img: {
-      src: "./assets/Images/default-profile-picture.png",
-      alt: "profile picture",
-    },
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    img: {
-      src: "./assets/Images/default-profile-picture.png",
-      alt: "profile picture",
-    },
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
-const commentsSection = document.createElement("section");
-commentsSection.classList.add("comments");
-const formSection = document.querySelector(".form");
-formSection.append(commentsSection);
-
-renderComments();
-
-function renderComments() {
-  for (let i = 0; i < defaultComments.length; i++) {
-    let currentComment = defaultComments[i];
+// function declarations
+function renderComments(commentData) {
+  for (let i = 0; i < commentData.length; i++) {
+    let currentComment = commentData[i];
     displayComment(currentComment);
   }
 }
@@ -49,6 +13,7 @@ function createComment(comment) {
   article.classList.add("comment");
 
   // create and append img
+  console.log(comment);
   const avatar = createAvatar(comment.img);
   // create comment container
   const container = createCommentContent(comment);
@@ -66,8 +31,13 @@ function displayComment(comment) {
 function createAvatar(img) {
   const avatar = document.createElement("img");
   avatar.classList.add("comments__img");
-  avatar.src = img.src;
-  avatar.alt = img.alt;
+  // console.log(avatar, img);
+  if (img) {
+    avatar.src = img.src;
+  }
+  if (img) {
+    avatar.alt = img.alt;
+  }
   return avatar;
 }
 
@@ -111,17 +81,52 @@ function createCommentContent(comment) {
   const commenter = createName(comment.name);
   infoDiv.appendChild(commenter);
 
-  const commentDate = createDate(comment.date);
+  const commentDate = createDate(comment.timestamp);
   infoDiv.appendChild(commentDate);
 
   //creat comment p element
-  const commentText = createCommentText(comment.text);
+  const commentText = createCommentText(comment.comment);
   container.appendChild(commentText);
   return container;
 }
 function clearComments() {
   commentsSection.innerHTML = "";
 }
+
+// let defaultComments = [
+//   {
+//     img: {
+//       src: "./assets/Images/default-profile-picture.png",
+//       alt: "profile picture",
+//     },
+//     name: "Connor Walton",
+//     date: "02/17/2021",
+//     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     img: {
+//       src: "./assets/Images/default-profile-picture.png",
+//       alt: "profile picture",
+//     },
+//     name: "Emilie Beach",
+//     date: "01/09/2021",
+//     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     img: {
+//       src: "./assets/Images/default-profile-picture.png",
+//       alt: "profile picture",
+//     },
+//     name: "Miles Acosta",
+//     date: "12/20/2020",
+//     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
+
+const commentsSection = document.createElement("section");
+commentsSection.classList.add("comments");
+const formSection = document.querySelector(".form");
+formSection.append(commentsSection);
 
 const submitButton = document.getElementsByClassName("form__button")[0];
 
@@ -142,7 +147,7 @@ submitButton.addEventListener("click", (e) => {
     date: new Date().toLocaleDateString("en-US"),
   };
 
-  defaultComments.push(latestComment);
+  getComments().push(latestComment);
 
   //clean section from old comments
   clearComments();
@@ -151,3 +156,23 @@ submitButton.addEventListener("click", (e) => {
   nameInput.value = "";
   commenterText.value = "";
 });
+
+function getComments() {
+  // console.log("fado is  killing it");
+  axios
+    .get(
+      'https://project-1-api.herokuapp.com/comments?api_key="69a82381-da8f-44fe-8e3a-9193c33b95f9"'
+    )
+    .then((response) => {
+      console.log(response);
+      const defaultComments = response.data;
+      renderComments(defaultComments);
+      return defaultComments;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+getComments();
+
+// console.log(getComments());
