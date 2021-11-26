@@ -57,7 +57,7 @@ function createCommentText(text) {
 function createDate(date) {
   const commentDate = document.createElement("p");
   commentDate.classList.add("comments__date");
-  commentDate.innerText = new Date(date * 1000).toLocaleDateString("en-US");
+  commentDate.innerText = new Date(datemm).toLocaleDateString("en-US");
   return commentDate;
 }
 
