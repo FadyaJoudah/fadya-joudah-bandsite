@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", "sans-serif";
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
   src: url("../../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
@@ -409,6 +409,9 @@ ul {
   line-height: _;
   font-weight: _;
 }
+.form__button:hover {
+  background-color: #000000;
+}
 @media screen and (min-width: 48rem) {
   .form__button {
     width: 9rem;
@@ -419,10 +422,6 @@ ul {
     align-self: flex-end;
     text-align: center;
   }
-}
-
-#comment-button:hover {
-  background-color: #000000;
 }
 
 .line {
@@ -534,13 +533,27 @@ ul {
   line-height: _;
   font-weight: _;
 }
+@media screen and (min-width: 80rem) {
+  .footer address {
+    font-size: 0.9rem;
+    line-height: _;
+    font-weight: _;
+  }
+}
 .footer__bold {
   font-size: 0.8rem;
   line-height: _;
   font-weight: bold;
 }
-.footer p {
+.footer__footer-text {
   color: #ffffff;
+}
+@media screen and (min-width: 80rem) {
+  .footer__footer-text {
+    font-size: 0.9rem;
+    line-height: _;
+    font-weight: _;
+  }
 }
 @media screen and (min-width: 48rem) {
   .footer__bottom {
@@ -564,17 +577,25 @@ ul {
     font-weight: _;
   }
 }
+@media screen and (min-width: 80rem) {
+  .footer__bottom__email {
+    font-size: 0.9rem;
+    line-height: _;
+    font-weight: _;
+  }
+}
 .footer__bottom__info {
   margin-bottom: 1rem;
 }
-.footer h2 {
+
+.bottom-logo {
   color: #ffffff;
   font-size: _;
   line-height: _;
   font-weight: 400;
 }
 @media screen and (min-width: 48rem) {
-  .footer h2 {
+  .bottom-logo {
     display: none;
   }
 }
@@ -594,6 +615,7 @@ ul {
 }
 
 .rights {
+  color: #ffffff;
   font-size: 0.8rem;
   line-height: _;
   font-weight: _;
@@ -601,6 +623,13 @@ ul {
 @media screen and (min-width: 48rem) {
   .rights {
     font-size: 0.5rem;
+    line-height: _;
+    font-weight: _;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .rights {
+    font-size: 0.8rem;
     line-height: _;
     font-weight: _;
   }

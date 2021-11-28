@@ -1,6 +1,7 @@
-@use "./partials/typography" as *;
 @use "./partials/variables" as *;
+@use "./partials/typography" as *;
 @use "./partials/mixins" as *;
+@use "./partials/global" as *;
 
 .hero-shows {
   background-image: url("../assets/Images/hero-shows.jpg");
@@ -45,7 +46,7 @@
     margin: 0 0 1.5rem 1.5rem;
     width: 70%;
     height: 6rem;
-    border-radius: 4px;
+    border-radius: 5px;
     @include tablet {
       margin-left: 2.5rem;
       height: 8rem;
@@ -145,6 +146,10 @@
 
   &__info-section {
     margin-bottom: 0.5rem;
+  }
+
+  &--active {
+    background-color: $silver;
   }
 }
 .shows-list {

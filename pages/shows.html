@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shows</title>
     <link rel="stylesheet" href="../styles/bio.css" />
-    <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/shows.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__logo">
-        <a href="index.html" class="header__link">BANDSITE</a>
+        <a href="../index.html" class="header__link">BANDSITE</a>
       </div>
       <nav class="nav">
         <ul class="nav__tabs">
@@ -30,50 +29,29 @@
       <div class="hero-shows-wrapper">
         <h1 class="hero-shows__title">Queen of Yellow x For The Sting</h1>
         <div class="hero-shows__container">
-          <iframe
+          <!-- <iframe
             class="hero-shows__song"
             height="43.75rem"
             scrolling="no"
             frameborder="no"
             allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/596420436&color=%23b851ab&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-          ></iframe>
+          ></iframe> -->
         </div>
       </div>
     </main>
-    <!-- <section class="shows"> 
-        <h2 class="shows__title">Shows</h2>
-        <div class="shows__info shows__info--hidden">
-          <p class="shows__details">DATE</p>
-          <p class="shows__details">VENUE</p>
-          <p class="shows__details">LOCATION</p>
-        </div>
-        <div class="shows-list">
-          <div class="shows__show show">
-            <div class="show__info-section">
-              <p class="show__label">DATE</p>
-              <p class="show__details">Mon Sept 06 2021</p>
-            </div>
-            <div class="show__info">
-              <p class="show__label">VENUE</p>
-              <p class="show__details">Ronald Lane</p>
-            </div>
-            <div class="show__info">
-              <p class="show__label">LOCATION</p>
-              <p class="show__details">San Francisco, CA</p>
-            </div>
-            <button>BUY TICKETS</button>
-          </div> 
-        </section>
-          <div/>-->
 
     <footer class="footer">
       <!-- the wrapper div is to keep the child element form expanding when the page is bigger  -->
       <div class="footer__wrapper">
         <section class="footer__top">
           <div class="footer__top__left">
-            <h1 class="footer__top__heading">Get in Touch</h1>
-            <a href="https://www.instagram.com/" class="footer__top__link">
+            <h2 class="footer__top__heading">Get in Touch</h2>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              class="footer__top__link"
+            >
               <img
                 src="../assets/Icons/SVG/Icon-instagram.svg"
                 alt="instagram"
@@ -81,7 +59,11 @@
               />
             </a>
 
-            <a href="https://www.facebook.com/" class="footer__top__link">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              class="footer__top__link"
+            >
               <img
                 src="../assets/Icons/SVG/Icon-facebook.svg"
                 alt="facebook"
@@ -89,7 +71,11 @@
               />
             </a>
 
-            <a href="https://twitter.com/" class="footer__top__link">
+            <a
+              href="https://twitter.com/"
+              target="_blank"
+              class="footer__top__link"
+            >
               <img
                 src="../assets/Icons/SVG/Icon-twitter.svg"
                 alt="twitter"
@@ -104,8 +90,8 @@
         <section class="footer__bottom">
           <div class="footer__bottom__info">
             <div class="footer__bold">
-              <p>Cam Adams</p>
-              <p>The Bees Knees Management</p>
+              <p class="footer__footer-text">Cam Adams</p>
+              <p class="footer__footer-text">The Bees Knees Management</p>
             </div>
             <address>
               <br />503 Broadway Penthouse, <br />New York, NY 10012, USA
@@ -119,8 +105,8 @@
           </div>
           <div class="footer__bottom__info">
             <div class="footer__bold">
-              <p>Pearl Gregg</p>
-              <p>Limitless Artist Group</p>
+              <p class="footer__footer-text">Pearl Gregg</p>
+              <p class="footer__footer-text">Limitless Artist Group</p>
             </div>
             <address>
               <br />Booking Agent for <br />US / South America / Japan
@@ -134,8 +120,8 @@
           </div>
           <div class="footer__bottom__info">
             <div class="footer__bold">
-              <p>Carson Whyte</p>
-              <p>TARCH Entertainment</p>
+              <p class="footer__footer-text">Carson Whyte</p>
+              <p class="footer__footer-text">TARCH Entertainment</p>
             </div>
             <address><br />Booking Agent for<br />UK / EU / AU</address>
             <a
@@ -147,13 +133,14 @@
             <!-- the _blank in target attribute  is to open the email in a new tab -->
           </div>
         </section>
-        <h2>BANDSITE</h2>
+        <h2 class="bottom-logo">BANDSITE</h2>
         <p class="rights">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </p>
       </div>
       <section class="comments"></section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../scripts/build-shows-page.js"></script>
   </body>
 </html>

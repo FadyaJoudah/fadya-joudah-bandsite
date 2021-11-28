@@ -1,7 +1,7 @@
-@use "./partials/typography" as *;
 @use "./partials/variables" as *;
+@use "./partials/typography" as *;
 @use "./partials/mixins" as *;
-@use "./global" as *;
+@use "./partials/global" as *;
 .header {
   height: 5.5625rem;
   background-color: $band-dark;
@@ -291,6 +291,9 @@
     margin: 1rem 0 0 0;
     border-radius: 0.2rem;
     border: none;
+    &:hover {
+      background-color: $band-black;
+    }
     @include text-settings(1rem, _, _);
     @include tablet {
       width: 9rem;
@@ -298,11 +301,6 @@
       align-self: flex-end;
       text-align: center;
     }
-  }
-}
-#comment-button {
-  &:hover {
-    background-color: $band-black;
   }
 }
 
@@ -393,13 +391,19 @@
     color: $white;
     padding-bottom: 1.5rem;
     @include text-settings(0.8rem, _, _);
+    @include desktop {
+      @include text-settings(0.9rem, _, _);
+    }
   }
   &__bold {
     @include text-settings(0.8rem, _, bold);
   }
 
-  p {
+  &__footer-text {
     color: $white;
+    @include desktop {
+      @include text-settings(0.9rem, _, _);
+    }
   }
 
   &__bottom {
@@ -413,18 +417,20 @@
       @include tablet {
         @include text-settings(0.7rem, _, _);
       }
+      @include desktop {
+        @include text-settings(0.9rem, _, _);
+      }
     }
     &__info {
       margin-bottom: 1rem;
     }
   }
-
-  h2 {
-    color: $white;
-    @include text-settings(_, _, 400);
-    @include tablet {
-      display: none;
-    }
+}
+.bottom-logo {
+  color: $white;
+  @include text-settings(_, _, 400);
+  @include tablet {
+    display: none;
   }
 }
 
@@ -439,8 +445,15 @@
 }
 
 .rights {
+  color: $white;
   @include text-settings(0.8rem, _, _);
   @include tablet {
     @include text-settings(0.5rem, _, _);
   }
+  @include desktop {
+    @include text-settings(0.8rem, _, _);
+  }
 }
+// activeState.addEventListener("click", (e) => {
+//   document.body.style.backgroundColor = "#afafaf";
+// });

@@ -1,9 +1,41 @@
 @font-face {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", "sans-serif";
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2");
   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff");
   src: url("../../assets/Font/Alternative/AvenirNextLTPro.ttf") format("truetype");
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir";
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+form {
+  margin: 0;
+}
+
+ul {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
 .hero-shows {
   background-image: url("../assets/Images/hero-shows.jpg");
   height: 20rem;
@@ -68,7 +100,7 @@
   margin: 0 0 1.5rem 1.5rem;
   width: 70%;
   height: 6rem;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 @media screen and (min-width: 48rem) {
   .hero-shows__container {
@@ -214,6 +246,9 @@
 }
 .show__info-section {
   margin-bottom: 0.5rem;
+}
+.show--active {
+  background-color: #afafaf;
 }
 
 @media screen and (min-width: 80rem) {

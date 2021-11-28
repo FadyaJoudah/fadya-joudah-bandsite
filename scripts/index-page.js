@@ -1,9 +1,10 @@
+let mainCommentList = [];
 // function declarations
-function renderComments(commentData) {
-  for (let i = 0; i < commentData.length; i++) {
-    let currentComment = commentData[i];
-    displayComment(currentComment);
-  }
+function renderComments(commentsData) {
+  commentsData.forEach((comment) => {
+    displayComment(comment);
+    console.log(commentsData);
+  });
 }
 
 function createComment(comment) {
@@ -13,7 +14,6 @@ function createComment(comment) {
   article.classList.add("comment");
 
   // create and append img
-  console.log(comment);
   const avatar = createAvatar(comment.img);
   // create comment container
   const container = createCommentContent(comment);
@@ -57,7 +57,7 @@ function createCommentText(text) {
 function createDate(date) {
   const commentDate = document.createElement("p");
   commentDate.classList.add("comments__date");
-  commentDate.innerText = new Date(datemm).toLocaleDateString("en-US");
+  commentDate.innerText = new Date(date).toLocaleDateString("en-US");
   return commentDate;
 }
 
@@ -88,43 +88,31 @@ function createCommentContent(comment) {
   container.appendChild(commentText);
   return container;
 }
-function clearComments() {
-  commentsSection.innerHTML = "";
-}
 
 const commentsSection = document.createElement("section");
 commentsSection.classList.add("comments");
 const formSection = document.querySelector(".form");
 formSection.append(commentsSection);
 
-const submitButton = document.getElementsByClassName("form__button")[0];
+const form = document.querySelector(".form__section");
 
-submitButton.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const nameInput = document.getElementsByClassName("form__input")[0];
+  const nameInput = document.querySelector(".form__input");
   const commenterText = document.querySelector(".form__text");
-  const commenterImg = document.querySelector(".form__img");
-
   const latestComment = {
     name: nameInput.value,
-    img: {
-      src: commenterImg.getAttribute("src"),
-      alt: "Profile Avatar",
-    },
-    text: commenterText.value,
-    date: new Date().toLocaleDateString("en-US"),
+    comment: commenterText.value,
   };
 
-  getComments().push(latestComment);
-
-  //clean section from old comments
-  clearComments();
-  renderComments();
-
-  nameInput.value = "";
-  commenterText.value = "";
+  postComments(latestComment);
 });
+
+document.querySelector("form").onsubmit = (e) => {
+  e.target.reset();
+  return false;
+};
 
 function getComments() {
   axios
@@ -132,13 +120,40 @@ function getComments() {
       'https://project-1-api.herokuapp.com/comments?api_key="69a82381-da8f-44fe-8e3a-9193c33b95f9"'
     )
     .then((response) => {
-      console.log(response);
-      const defaultComments = response.data;
-      renderComments(defaultComments);
-      return defaultComments;
+      mainCommentList = response.data;
+      renderComments(mainCommentList);
+      return mainCommentList;
     })
     .catch((err) => {
       console.log(err);
     });
 }
 getComments();
+
+function postComments(draftComment) {
+  axios
+    .post(
+      'https://project-1-api.herokuapp.com/comments?api_key="69a82381-da8f-44fe-8e3a-9193c33b95f9"',
+      {
+        name: draftComment.name,
+        comment: draftComment.comment,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((response) => {
+      const newComment = response.data;
+      console.log(response);
+      mainCommentList.push(newComment);
+      commentsSection.innerHTML = "";
+      renderComments(mainCommentList);
+      // const newCommentNode = createComment(newComment);
+      // commentsSection.prepend(newCommentNode);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
