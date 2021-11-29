@@ -340,6 +340,16 @@
   &__content {
     width: 100%;
   }
+  &__like-button {
+    margin: 0 2rem 0.5rem 0;
+    background-color: $white;
+    border: none;
+  }
+  &__delete-button {
+    margin: 0 2rem 0.5rem 0;
+    background-color: $white;
+    border: none;
+  }
 }
 
 .footer {
@@ -454,6 +464,3 @@
     @include text-settings(0.8rem, _, _);
   }
 }
-// activeState.addEventListener("click", (e) => {
-//   document.body.style.backgroundColor = "#afafaf";
-// });

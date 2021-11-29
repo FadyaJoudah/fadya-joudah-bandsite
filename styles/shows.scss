@@ -103,9 +103,7 @@
   &:hover {
     background-color: $alabaster;
   }
-  &:active {
-    background-color: $silver;
-  }
+
   @include tablet {
     @include flex(row, flex-end, space-evenly);
   }

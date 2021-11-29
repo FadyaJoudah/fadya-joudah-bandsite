@@ -4,7 +4,7 @@ const main = document.querySelector(".hero-shows");
 main.parentNode.insertBefore(showSection, main.nextSibling);
 
 createTitle();
-const showsList = createShowList();
+const showsList = createShowContainer();
 
 createTableHeading();
 
@@ -28,8 +28,8 @@ function creatEventInfoNode(label, value, modifier) {
   return eventInfoSection;
 }
 
+// create hidden info div
 function createTableHeading() {
-  // create hidden info div
   const tableHeading = document.createElement("div");
   tableHeading.classList.add("shows__info");
   tableHeading.classList.add("shows__info--hidden");
@@ -49,20 +49,22 @@ function createTableHeading() {
   infoHeading3.innerText = "LOCATION";
   tableHeading.append(infoHeading, infoHeading2, infoHeading3);
 }
-
+// creates the title above the shows table
 function createTitle() {
   const heading = document.createElement("h2");
   heading.classList.add("shows__title");
   heading.innerText = "Shows";
   showSection.prepend(heading);
 }
-function createShowList() {
+
+// creates the container wrapping the shows table
+function createShowContainer() {
   const showsList = document.createElement("div");
   showsList.classList.add("shows-list");
   showSection.append(showsList);
   return showsList;
 }
-
+// creates a single show with details (date,venue,location,button) and changes the active status when clicked
 function createShow(show) {
   let timeStamp = Number(show.date);
   let formattedDate = new Date(timeStamp).toLocaleDateString("en-US");
@@ -76,20 +78,20 @@ function createShow(show) {
   buyTicketSection.classList.add("show");
   showsList.append(buyTicketSection);
   buyTicketSection.append(dateNode, venueNode, locationNode);
+
   buyTicketSection.addEventListener("click", (e) => {
-    // if (buyTicketSection.getAttribute("class")!== "show--active"){
-
-    // }
-    console.log(buyTicketSection.getAttribute("class"));
+    const allShows = document.querySelectorAll(".show");
+    allShows.forEach((show) => {
+      show.classList.remove("show--active");
+    });
     buyTicketSection.classList.add("show--active");
-    // bu;
   });
-
   const buttonEle = document.createElement("button");
   buttonEle.classList.add("show__button");
   buttonEle.innerText = "BUY TICKETS";
   buyTicketSection.append(buttonEle);
 }
+
 getShows();
 function getShows() {
   axios

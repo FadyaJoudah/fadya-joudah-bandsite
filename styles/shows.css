@@ -186,9 +186,6 @@ ul {
 .show:hover {
   background-color: #fafafa;
 }
-.show:active {
-  background-color: #afafaf;
-}
 @media screen and (min-width: 48rem) {
   .show {
     display: flex;
